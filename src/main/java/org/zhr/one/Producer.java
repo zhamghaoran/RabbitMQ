@@ -1,4 +1,4 @@
-package org.zhr;
+package org.zhr.one;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
@@ -15,10 +15,10 @@ public class  Producer {
     public static void main(String[] args) throws IOException, TimeoutException {
         //创建工厂
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("");
+        connectionFactory.setHost("43.139.80.148");
         // 用户名
-        connectionFactory.setUsername("");
-        connectionFactory.setPassword("");
+        connectionFactory.setUsername("jjking");
+        connectionFactory.setPassword("153359157aA");
         // 创建连接
         Connection connection = connectionFactory.newConnection();
         //获取信道

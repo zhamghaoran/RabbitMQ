@@ -1,4 +1,4 @@
-package org.zhr;
+package org.zhr.one;
 
 public class Main {
     public static void main(String[] args) {

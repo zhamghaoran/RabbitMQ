@@ -1,6 +1,7 @@
-package org.zhr;
+package org.zhr.one;
 
 import com.rabbitmq.client.*;
+import org.zhr.utils.RabbitMqUtils;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -14,12 +15,7 @@ public class Consumer {
     // 接受消息
     public static void main(String[] args) throws IOException, TimeoutException {
         // 创建连接工厂
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("");
-        connectionFactory.setUsername("");
-        connectionFactory.setPassword("");
-        Connection connection = connectionFactory.newConnection();
-        Channel channel = connection.createChannel();
+        Channel channel = RabbitMqUtils.getChannel();
         // 声明接受消息
         DeliverCallback deliverCallback = (consumer,message)->{
             System.out.println(new String(message.getBody()));
