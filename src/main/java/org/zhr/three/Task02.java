@@ -19,6 +19,9 @@ public class Task02 {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         Channel channel = RabbitMqUtils.getChannel();
+        // 不公平分发
+        //设置参数rabbit只会把任务分发给没有那么忙的消费者
+        channel.basicQos(1);
         // 声明队列
         // 第二个参数设置为true实现队列持久化
         channel.queueDeclare(TASK_QUEUE_NAME, true, false, false, null);
