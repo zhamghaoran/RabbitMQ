@@ -13,9 +13,9 @@ import java.util.concurrent.TimeoutException;
 public class RabbitMqUtils {
     public static Channel getChannel() throws IOException, TimeoutException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("");
-        connectionFactory.setUsername("");
-        connectionFactory.setPassword("");
+        connectionFactory.setHost("43.139.80.148");
+        connectionFactory.setUsername("jjking");
+        connectionFactory.setPassword("153359157aA");
         Connection connection = connectionFactory.newConnection();
         return connection.createChannel();
     }
